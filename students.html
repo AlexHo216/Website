@@ -110,9 +110,9 @@
 
 <style>
 .carousel {
-  width: 100%;              /* 占满正文宽度 */
-  max-width: 900px;         /* 防止超宽屏幕太夸张，可自行调大/删除 */
-  height: 340px;
+  width: 100%;
+  max-width: 900px;
+  height: 280px;              /* ↓ 整体高度缩小 */
   overflow: hidden;
   position: relative;
   border-radius: 8px;
@@ -121,13 +121,13 @@
 
 .carousel-track {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   animation: slide 30s infinite linear;
 }
 
 .slide {
-  flex: 0 0 520px;          /* 每张图片宽度 */
-  height: 320px;
+  flex: 0 0 420px;            /* ↓ 图片宽度缩小 */
+  height: 260px;              /* ↓ 图片高度缩小 */
   position: relative;
   border-radius: 8px;
   overflow: hidden;
@@ -147,17 +147,17 @@
   color: white;
   text-align: center;
   padding: 6px 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .carousel:hover .carousel-track {
   animation-play-state: paused;
 }
 
-/* 位移距离 = (图片宽度 + gap) × 图片数量 */
+/* (420 + 14) × 6 = 2604 */
 @keyframes slide {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(-3216px); } /* (520+16)*6 */
+  100% { transform: translateX(-2604px); }
 }
 </style>
 
