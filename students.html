@@ -109,46 +109,98 @@
 <h2>Group Activities</h2>
 
 <style>
-.slider {
-  width: 600px;           /* 控制整体宽度，可改成 800px 等 */
-  height: 300px;          /* 图片高度 */
+.carousel {
+  width: 640px;
+  height: 420px;
   overflow: hidden;
+  position: relative;
   border-radius: 10px;
   margin: 20px 0;
 }
 
-.slider-track {
+.carousel-track {
   display: flex;
-  width: calc(600px * 6); /* 图片数量 × 宽度（这里是6张） */
-  animation: scroll 18s linear infinite;
+  width: calc(640px * 7);
+  animation: slide 24s infinite linear;
 }
 
-.slider-track img {
-  width: 600px;
-  height: 300px;
+.slide {
+  width: 640px;
+  height: 420px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 640px;
+  height: 420px;
   object-fit: cover;
 }
 
-.slider:hover .slider-track {
-  animation-play-state: paused; /* 鼠标悬停暂停 */
+.caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 16px;
 }
 
-@keyframes scroll {
+.carousel:hover .carousel-track {
+  animation-play-state: paused;
+}
+
+@keyframes slide {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(-3000px); } /* 600px × 5 */
+  100% { transform: translateX(-3840px); } /* 640 × 6 */
 }
 </style>
 
-<div class="slider">
-  <div class="slider-track">
-    <img src="images/activity1.jpg" alt="Group activity 1" />
-    <img src="images/activity2.jpg" alt="Group activity 2" />
-    <img src="images/activity3.jpg" alt="Group activity 3" />
-    <img src="images/activity4.jpg" alt="Group activity 4" />
-    <img src="images/activity5.jpg" alt="Group activity 5" />
-    <img src="images/activity1.jpg" alt="repeat" /> <!-- 用第一张重复一遍，实现无缝循环 -->
+<div class="carousel">
+  <div class="carousel-track">
+
+    <div class="slide">
+      <img src="img/paper1.jpg" alt="">
+      <div class="caption">Best Student Paper Award</div>
+    </div>
+
+    <div class="slide">
+      <img src="img/paper2.jpg" alt="">
+      <div class="caption">Best Student Paper Award</div>
+    </div>
+
+    <div class="slide">
+      <img src="img/dinner1.jpg" alt="">
+      <div class="caption">Group Dinner</div>
+    </div>
+
+    <div class="slide">
+      <img src="img/dinner2.jpg" alt="">
+      <div class="caption">Group Dinner</div>
+    </div>
+
+    <div class="slide">
+      <img src="img/hiking1.jpg" alt="">
+      <div class="caption">Hiking Activity</div>
+    </div>
+
+    <div class="slide">
+      <img src="img/hiking2.jpg" alt="">
+      <div class="caption">Hiking Activity</div>
+    </div>
+
+    <!-- 重复第一张实现无缝循环 -->
+    <div class="slide">
+      <img src="img/paper1.jpg" alt="">
+      <div class="caption">Best Student Paper Award</div>
+    </div>
+
   </div>
 </div>
+
+  
 <div id="footer">
 <div id="footer-text">
 Page generated 2022-10-10, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
