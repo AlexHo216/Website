@@ -110,30 +110,32 @@
 
 <style>
 .carousel {
-  width: 640px;
-  height: 420px;
+  width: 460px;
+  height: 300px;
   overflow: hidden;
   position: relative;
-  border-radius: 10px;
-  margin: 20px 0;
+  border-radius: 8px;
+  margin: 15px 0;
 }
 
 .carousel-track {
   display: flex;
-  width: calc(640px * 7);
-  animation: slide 24s infinite linear;
+  gap: 12px;
+  animation: slide 30s infinite linear;
 }
 
 .slide {
-  width: 640px;
-  height: 420px;
+  width: 420px;
+  height: 260px;
   position: relative;
   flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .slide img {
-  width: 640px;
-  height: 420px;
+  width: 420px;
+  height: 260px;
   object-fit: cover;
 }
 
@@ -141,11 +143,11 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.55);
   color: white;
   text-align: center;
-  padding: 8px 0;
-  font-size: 16px;
+  padding: 6px 0;
+  font-size: 14px;
 }
 
 .carousel:hover .carousel-track {
@@ -154,7 +156,7 @@
 
 @keyframes slide {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(-3840px); } /* 640 × 6 */
+  100% { transform: translateX(-2592px); } /* (420+12)*6 */
 }
 </style>
 
@@ -162,38 +164,38 @@
   <div class="carousel-track">
 
     <div class="slide">
-      <img src="img/paper1.jpg" alt="">
+      <img src="img/paper1.jpg">
       <div class="caption">Best Student Paper Award</div>
     </div>
 
     <div class="slide">
-      <img src="img/paper2.jpg" alt="">
+      <img src="img/paper2.jpg">
       <div class="caption">Best Student Paper Award</div>
     </div>
 
     <div class="slide">
-      <img src="img/dinner1.jpg" alt="">
+      <img src="img/dinner1.jpg">
       <div class="caption">Group Dinner</div>
     </div>
 
     <div class="slide">
-      <img src="img/dinner2.jpg" alt="">
+      <img src="img/dinner2.jpg">
       <div class="caption">Group Dinner</div>
     </div>
 
     <div class="slide">
-      <img src="img/hiking1.jpg" alt="">
+      <img src="img/hiking1.jpg">
       <div class="caption">Hiking Activity</div>
     </div>
 
     <div class="slide">
-      <img src="img/hiking2.jpg" alt="">
+      <img src="img/hiking2.jpg">
       <div class="caption">Hiking Activity</div>
     </div>
 
-    <!-- 重复第一张实现无缝循环 -->
+    <!-- 重复第一张用于无缝循环 -->
     <div class="slide">
-      <img src="img/paper1.jpg" alt="">
+      <img src="img/paper1.jpg">
       <div class="caption">Best Student Paper Award</div>
     </div>
 
