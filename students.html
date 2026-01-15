@@ -105,6 +105,50 @@
 </li>
 </ul>
 </div>
+
+<h2>Group Activities</h2>
+
+<style>
+.slider {
+  width: 600px;           /* 控制整体宽度，可改成 800px 等 */
+  height: 300px;          /* 图片高度 */
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.slider-track {
+  display: flex;
+  width: calc(600px * 6); /* 图片数量 × 宽度（这里是6张） */
+  animation: scroll 18s linear infinite;
+}
+
+.slider-track img {
+  width: 600px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.slider:hover .slider-track {
+  animation-play-state: paused; /* 鼠标悬停暂停 */
+}
+
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-3000px); } /* 600px × 5 */
+}
+</style>
+
+<div class="slider">
+  <div class="slider-track">
+    <img src="images/activity1.jpg" alt="Group activity 1" />
+    <img src="images/activity2.jpg" alt="Group activity 2" />
+    <img src="images/activity3.jpg" alt="Group activity 3" />
+    <img src="images/activity4.jpg" alt="Group activity 4" />
+    <img src="images/activity5.jpg" alt="Group activity 5" />
+    <img src="images/activity1.jpg" alt="repeat" /> <!-- 用第一张重复一遍，实现无缝循环 -->
+  </div>
+</div>
 <div id="footer">
 <div id="footer-text">
 Page generated 2022-10-10, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
